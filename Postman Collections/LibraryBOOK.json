@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "85fa0af6-47f9-45d5-a8a3-2af6a6da91c7",
+		"name": "LibraryAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddBook",
+			"id": "d9211f60-6200-4ab5-83c6-21fac68d53ad",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Learn Appium Automation with Java\",\r\n    \"isbn\": \"shayaree\",\r\n    \"aisle\": \"2402\",\r\n    \"author\": \"John foe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://216.10.245.166/Library/Addbook.php"
+			},
+			"response": []
+		},
+		{
+			"name": "GetBookByAuthorName",
+			"id": "c593a302-b61b-461a-bf48-817c26acc41e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://216.10.245.166/Library/GetBook.php?AuthorName=John foe",
+					"protocol": "http",
+					"host": [
+						"216",
+						"10",
+						"245",
+						"166"
+					],
+					"path": [
+						"Library",
+						"GetBook.php"
+					],
+					"query": [
+						{
+							"key": "AuthorName",
+							"value": "John foe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBookByID",
+			"id": "1e3fa772-c0b2-4ac0-8f44-e48b6e2763f6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://216.10.245.166/Library/GetBook.php?ID=shayaree2402",
+					"protocol": "http",
+					"host": [
+						"216",
+						"10",
+						"245",
+						"166"
+					],
+					"path": [
+						"Library",
+						"GetBook.php"
+					],
+					"query": [
+						{
+							"key": "ID",
+							"value": "shayaree2402"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteBOOk",
+			"id": "508d4fa2-ecd3-43f0-a65d-9840f467735c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"ID\" : \"bcd227\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://216.10.245.166/Library/DeleteBook.php"
+			},
+			"response": []
+		}
+	]
+}

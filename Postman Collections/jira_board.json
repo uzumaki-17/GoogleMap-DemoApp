@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "7d5e0e71-77da-4c89-a4e7-8b1a521c4aaf",
+		"name": "JIRA APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cookie generation",
+			"id": "53b00797-450b-4329-bd38-9256c6fe0ec4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"ujjwal.job.sgrl\", \"password\": \"Ujjwal@123\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/rest/auth/1/session"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Issue",
+			"id": "8fa95f82-f6f1-4c06-8ac5-96201eb51222",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=A48403E326796E3E7C649107DE48F2DB",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"update\": {\r\n       \r\n    },\r\n    \"fields\": {\r\n        \"project\": {\r\n            \"key\":\"AD\"\r\n        },\r\n        \"summary\": \"Rest Assured Automation demo\",\r\n        \"description\": \"My comment issue 2\",\r\n        \"issuetype\": {\r\n            \"name\": \"Bug\"\r\n        }\r\n        \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/rest/api/2/issue"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Issue",
+			"id": "bfeccbd2-716e-4aac-923e-4c1451193c81",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/rest/api/2/issue/JA-1"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Comment",
+			"id": "fe90fa91-2aba-44d9-a262-b074c4132da7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=61A95E5D9A7F24469E10C046C28B9211",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\": \"Hi I have just added a comment on the issue.\",\r\n    \"visibility\": {\r\n        \"type\": \"role\",\r\n        \"value\": \"Administrators\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/rest/api/2/issue/JA-3/comment"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Comment",
+			"id": "d081aa61-618d-41c8-8a18-9594123536ac",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\": \"Just Updated the comment\",\r\n    \"visibility\": {\r\n        \"type\": \"role\",\r\n        \"value\": \"Administrators\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/rest/api/2/issue/JA-2/comment/10000"
+			},
+			"response": []
+		}
+	]
+}
